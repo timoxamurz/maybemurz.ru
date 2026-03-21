@@ -2,32 +2,182 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width" />
-        <link href="index.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="index.css" rel="stylesheet">
+        <style>
+            @layer utilities {
+            .perspective-1000 {
+            perspective: 1000px;
+            }
+            .preserve-3d {
+            transform-style: preserve-3d;
+            }
+            .-rotate-x-90 {
+            transform: rotateX(-90deg);
+            }
+            /* Конечное состояние: поворот в 0 */
+            .rotate-x-0 {
+            transform: rotateX(0deg);
+            }
+            }
+            @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+            }
+        </style>
     </head>
-    <body id="a4jk13s6">
-        <div id="main-jk1f9023j">
-            <div id="warnbox-y5iasef89">
-                    <h1 class="gsans" style="font-weight: 800; font-style: normal; font-size: clamp(1rem, 5vw, 2.5rem);;"> Halo 👋</h1>
-                    <h3 class="gsans" style="font-weight: 400; font-style: normal; font-size: clamp(0.8rem, 5vw, 1.5rem);;">You'll be redirected to...</h3>
-                    <h3 class="gsans" style="font-weight: 600; font-style: normal; font-size: clamp(0.8rem, 5vw, 1.5rem);">t.me/maybemurz</h3>
-                <div id="warnbox-hth5sdf5h">
-                    <button id="btn-435jm88wef" class="gsans" style="font-weight: 400; font-style: normal; font-size: clamp(0.6rem, 5vw, 1.3rem);">Proceed</button>
+    <body class="flex flex-col items-center justify-center min-h-screen backgrnd gap-8 font-['Montserrat'] font-normal" style="background-position: center; background-size: cover; min-height: 100vh;">
+        <div class="flex justify-center items-center">
+            <div class="perspective-1000">
+                <div class="card relative gap-8 h-60 w-80 md:w-197 rounded-xl bg-white/20 backdrop-blur-md border-5 border-white/30 transition-transform duration-300 ease-out preserve-3d shadow-xl transform-3d">
+                    <div class="card-glare absolute inset-0 bg-gradient-to-br from-white/30 to-white/0 opacity-0 transition-opacity duration-150 ease-out"></div>
+                    <img class="absolute top-9 left-14 size-40 border-3 border-white/40 rounded-full" src="https://lh3.googleusercontent.com/pw/AP1GczNvYnpexi-zwNZqdZOB-zLKEOSlobNgA_VHRBk2CowsHFXALCUt8eCDyuXY7iFjETdNuS8lbU5_MjIO_pBi7KCFdhW1LdMleYV_d0oATmnUVkZRdpayilfp2EfbJ20j_hCV0lYuHNnoOTiaUtj28YFy=w945-h945-s-no-gm?authuser=0">
+                    <div class="absolute top-19 left-61 h-full items-center justify-center text-white font-extrabold text-7xl translate-z-16">maybemurz</div>
                 </div>
             </div>
         </div>
-    <script>
-        // 1. Находим кнопку в документе по её ID
-        const button = document.getElementById('btn-435jm88wef');
-
-        // 2. Добавляем "прослушиватель" события клика
-        button.addEventListener('click', function() {
-            // 3. Меняем адрес текущей страницы
-            window.location.href = 'https://t.me/maybemurz';
-        });
-    </script>
+        <div class="flex items-center justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="@container card-container perspective-1000">
+                    <div id="tgadbanner" class="card relative cursor-pointer h-60 w-60 rounded-xl bg-sky-500/20 hover:bg-sky-400/20 backdrop-blur-md border-5 border-sky-600/30 transition-transform duration-300 ease-out preserve-3d shadow-xl transform-3d truncate">
+                        <div class="card-glare absolute inset-0 bg-gradient-to-br from-white/30 to-white/0 opacity-0 transition-opacity duration-150 ease-out"></div>
+                        <img class="absolute -top-5 scale-45" src="telegram_colorized.png">
+                        <div class="absolute -left-2 bottom-4 text-sky-300 font-extrabold text-5xl translate-z-4">telegram</div>
+                    </div>
+                </div>
+                <div class="card-container perspective-1000">
+                    <div class="card relative cursor-not-allowed h-60 w-60 rounded-xl bg-emerald-500/20 hover:bg-emerald-400/20 backdrop-blur-md border-5 border-teal-600/30 transition-transform duration-300 ease-out preserve-3d shadow-xl transform-3d">
+                        <div class="card-glare absolute inset-0 bg-gradient-to-br from-white/30 to-white/0 opacity-0 transition-opacity duration-150 ease-out"></div>
+                        <div class="flex h-full items-center justify-center text-white font-bold">nothing 🙄</div>
+                    </div>
+                </div>
+                <div class="card-container perspective-1000">
+                    <div class="card relative cursor-not-allowed h-60 w-60 rounded-xl bg-pink-500/20 hover:bg-pink-400/20 backdrop-blur-md border-5 border-rose-600/30 transition-transform duration-300 ease-out preserve-3d shadow-xl transform-3d">
+                        <div class="card-glare absolute inset-0 bg-gradient-to-br from-white/30 to-white/0 opacity-0 transition-opacity duration-150 ease-out"></div>
+                        <div class="flex h-full items-center justify-center text-white font-bold">nothing 🙄</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="loader-wrapper" class="fixed w-full h-full bg-black flex flex-col justify-center content-center z-[1337]" style="transition: opacity 0.5s ease;">
+        </div>
+        <div id="tgadbanner-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300">
+            <div class="perspective-1000">
+                <div id="tgadbanner-content" class="w-80 rounded-2xl bg-sky-500/40 border-5 border-sky-600/60 p-8 shadow-2xl transition-transform duration-500 ease-out -rotate-x-90">
+                    <h2 class="text-2xl text-sky-300 font-extrabold">choose tg account</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <div id="1stTgacc" class="mt-4 w-full justify-center cursor-pointer rounded-lg bg-zinc-300 py-2 text-slate-900 font-medium" style="text-align: center;">1st</div>
+                        <div id="2ndTgacc" class="mt-4 w-full justify-center cursor-pointer rounded-lg bg-zinc-300 py-2 text-slate-900 font-medium" style="text-align: center;">2nd</div>
+                    </div>
+                    <button id="close-tgadbanner" class="mt-6 cursor-pointer w-full rounded-lg bg-white py-2 text-slate-900 font-bold">
+                    close
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.addEventListener('load', function() {
+            const loader = document.getElementById('loader-wrapper');
+    
+            // Плавное исчезновение
+            loader.style.opacity = '0';
+    
+            // Полное удаление из документа через полсекунды
+            setTimeout(() => {
+                loader.style.display = 'none';
+                }, 500);
+            });
+            // 1. Находим кнопку в документе по её ID
+            const firstTgaccbutton = document.getElementById('1stTgacc');
+            
+            // 2. Добавляем "прослушиватель" события клика
+            firstTgaccbutton.addEventListener('click', function() {
+                // 3. Меняем адрес текущей страницы
+                window.location.href = 'https://t.me/bascwelaobzejrcx';
+            });
+            // 1. Находим кнопку в документе по её ID
+            const secondTgaccbutton = document.getElementById('2ndTgacc');
+            
+            // 2. Добавляем "прослушиватель" события клика
+            secondTgaccbutton.addEventListener('click', function() {
+                // 3. Меняем адрес текущей страницы
+                window.location.href = 'https://t.me/acyofjnjmqpducer';
+            });
+            // Находим контейнеры карточек
+            const containers = document.querySelectorAll('.card-container');
+            
+            containers.forEach(container => {
+            const card = container.querySelector('.card');
+            const glare = container.querySelector('.card-glare'); // Слой блика
+            const sensitivity = 20;
+            
+            container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // 1. Поворот карточки (как и раньше)
+            const rotateX = ((y - centerY) / centerY) * -sensitivity;
+            const rotateY = ((x - centerX) / centerX) * sensitivity;
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            
+            // 2. Логика блика (Новая!)
+            
+            // Вычисляем угол наклона блика (в градусах)
+            const angle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI) - 90;
+            
+            // Вычисляем расстояние от центра (для прозрачности)
+            const distancePercent = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2)) / (Math.max(centerX, centerY) * 1.5);
+            
+            // Показываем блик и меняем его градиент
+            glare.style.opacity = distancePercent; // Прозрачность зависит от расстояния
+            glare.style.background = `linear-gradient(${angle}deg, rgba(255, 255, 255, ${0.4 * distancePercent}) 0%, rgba(255, 255, 255, 0) 80%)`;
+            });
+            
+            // Сброс при выходе мыши
+            container.addEventListener('mouseleave', () => {
+            card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            glare.style.opacity = '0'; // Скрываем блик
+            });
+            });
+            const openBtn = document.getElementById('tgadbanner');
+            const closeBtn = document.getElementById('close-tgadbanner');
+            const overlay = document.getElementById('tgadbanner-overlay');
+            const tgadbanner = document.getElementById('tgadbanner-content');
+            
+            // Функция открытия
+            openBtn.addEventListener('click', () => {
+            // 1. Показываем фон (меняем прозрачность)
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+            
+            // 2. Убираем поворот (запускается CSS transition)
+            tgadbanner.classList.remove('-rotate-x-90');
+            tgadbanner.classList.add('rotate-x-0');
+            });
+            
+            // Функция закрытия
+            const closetgadbanner = () => {
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            overlay.classList.remove('opacity-100');
+            
+            tgadbanner.classList.remove('rotate-x-0');
+            tgadbanner.classList.add('-rotate-x-90');
+            };
+            
+            closeBtn.addEventListener('click', closetgadbanner);
+            
+            // Закрытие при клике на темный фон
+            overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closetgadbanner();
+            });
+        </script>
     </body>
 </html>
