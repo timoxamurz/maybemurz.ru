@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="index.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -78,106 +79,5 @@
                 </div>
             </div>
         </div>
-        <script>
-            window.addEventListener('load', function() {
-            const loader = document.getElementById('loader-wrapper');
-    
-            // Плавное исчезновение
-            loader.style.opacity = '0';
-    
-            // Полное удаление из документа через полсекунды
-            setTimeout(() => {
-                loader.style.display = 'none';
-                }, 500);
-            });
-            // 1. Находим кнопку в документе по её ID
-            const firstTgaccbutton = document.getElementById('1stTgacc');
-            
-            // 2. Добавляем "прослушиватель" события клика
-            firstTgaccbutton.addEventListener('click', function() {
-                // 3. Меняем адрес текущей страницы
-                window.location.href = 'https://t.me/bascwelaobzejrcx';
-            });
-            // 1. Находим кнопку в документе по её ID
-            const secondTgaccbutton = document.getElementById('2ndTgacc');
-            
-            // 2. Добавляем "прослушиватель" события клика
-            secondTgaccbutton.addEventListener('click', function() {
-                // 3. Меняем адрес текущей страницы
-                window.location.href = 'https://t.me/acyofjnjmqpducer';
-            });
-            // Находим контейнеры карточек
-            const containers = document.querySelectorAll('.card-container');
-            
-            containers.forEach(container => {
-            const card = container.querySelector('.card');
-            const glare = container.querySelector('.card-glare'); // Слой блика
-            const sensitivity = 20;
-            
-            container.addEventListener('mousemove', (e) => {
-            const rect = container.getBoundingClientRect();
-            
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            // 1. Поворот карточки (как и раньше)
-            const rotateX = ((y - centerY) / centerY) * -sensitivity;
-            const rotateY = ((x - centerX) / centerX) * sensitivity;
-            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            
-            // 2. Логика блика (Новая!)
-            
-            // Вычисляем угол наклона блика (в градусах)
-            const angle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI) - 90;
-            
-            // Вычисляем расстояние от центра (для прозрачности)
-            const distancePercent = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2)) / (Math.max(centerX, centerY) * 1.5);
-            
-            // Показываем блик и меняем его градиент
-            glare.style.opacity = distancePercent; // Прозрачность зависит от расстояния
-            glare.style.background = `linear-gradient(${angle}deg, rgba(255, 255, 255, ${0.4 * distancePercent}) 0%, rgba(255, 255, 255, 0) 80%)`;
-            });
-            
-            // Сброс при выходе мыши
-            container.addEventListener('mouseleave', () => {
-            card.style.transform = `rotateX(0deg) rotateY(0deg)`;
-            glare.style.opacity = '0'; // Скрываем блик
-            });
-            });
-            const openBtn = document.getElementById('tgadbanner');
-            const closeBtn = document.getElementById('close-tgadbanner');
-            const overlay = document.getElementById('tgadbanner-overlay');
-            const tgadbanner = document.getElementById('tgadbanner-content');
-            
-            // Функция открытия
-            openBtn.addEventListener('click', () => {
-            // 1. Показываем фон (меняем прозрачность)
-            overlay.classList.remove('opacity-0', 'pointer-events-none');
-            overlay.classList.add('opacity-100');
-            
-            // 2. Убираем поворот (запускается CSS transition)
-            tgadbanner.classList.remove('-rotate-x-90');
-            tgadbanner.classList.add('rotate-x-0');
-            });
-            
-            // Функция закрытия
-            const closetgadbanner = () => {
-            overlay.classList.add('opacity-0', 'pointer-events-none');
-            overlay.classList.remove('opacity-100');
-            
-            tgadbanner.classList.remove('rotate-x-0');
-            tgadbanner.classList.add('-rotate-x-90');
-            };
-            
-            closeBtn.addEventListener('click', closetgadbanner);
-            
-            // Закрытие при клике на темный фон
-            overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) closetgadbanner();
-            });
-        </script>
     </body>
 </html>
